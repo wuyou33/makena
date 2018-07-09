@@ -3,7 +3,7 @@
 ![alt text](docs/pics/TopPics.png "Top pics to attract attention")
 
 Makena is a velocity-space, constraint-based physics engine for convex rigid body simulation.
-It also contains some useful stand-along geometric tools such as convex hull finders and an intersection finder for convex polytopes.
+It also contains some useful stand-alone geometric tools such as convex hull finders and an intersection finder for convex polytopes.
 The development is still in progress (pre-alpha release).  
 The development originally started to experiment an idea to track contacts over multiple simulation steps.
 Conventional physics engines run multiple iteration of geometric configuration update and collision detection
@@ -25,34 +25,34 @@ Following are some test visualizations of Makena physics engine that demostrate 
 [![alt text](docs/pics/Demo01.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-[![alt text](docs/pics/ContactDemo01.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/ContactDemo01.png "TEXT TEXT TEXT")](https://youtu.be/Kwkn6ANskhY)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-[![alt text](docs/pics/DemoCollision02.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/DemoCollision02.png "TEXT TEXT TEXT")](https://youtu.be/5dg-LZOpmAw)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 
 And here are some visualizations of some stand-alone components developed for Makena
 
 ## GJK intersection finder (collision detector)
-[![alt text](docs/pics/GJK.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/GJK.png "TEXT TEXT TEXT")](https://youtu.be/GfJqVzhR0S8)
 
 ## Intersection finder for two convex polytopes
-[![alt text](docs/pics/Intersection3D.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Intersection3D.png "TEXT TEXT TEXT")](https://youtu.be/FT_R4QHUpDQ)
 
 ## 3D Convex hull finder
 
-[![alt text](docs/pics/ConvexHull3DStepByStep.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
-[![alt text](docs/pics/ConvexHull3D1000StepByStep.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
-[![alt text](docs/pics/ConvexHull3DPatheticCube.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/ConvexHull3DStepByStep.png "TEXT TEXT TEXT")](https://youtu.be/7nrXpwJMh0Q)
+[![alt text](docs/pics/ConvexHull3D1000StepByStep.png "TEXT TEXT TEXT")](https://youtu.be/lCTMRB5TIuA)
+[![alt text](docs/pics/ConvexHull3DPatheticCube.png "TEXT TEXT TEXT")](https://youtu.be/Jrqs7vpF9Bw)
 
 ## Intersection finder for two convex polygons
-[![alt text](docs/pics/Intersection2D.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Intersection2D.png "TEXT TEXT TEXT")](https://youtu.be/_J9Uosw3RfM)
 
 ## Quaternion Average finder
 
-[![alt text](docs/pics/Quaternions5.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
-[![alt text](docs/pics/Quaternions2.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Quaternions5.png "TEXT TEXT TEXT")](https://youtu.be/qxkgNs0ltao)
+[![alt text](docs/pics/Quaternions2.png "TEXT TEXT TEXT")](https://youtu.be/6UZVWl_xGCg)
 
 
 
