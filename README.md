@@ -19,21 +19,34 @@ frictions/motors.
 
 Makena is a velocity-space, constraint-based physics engine for convex rigid 
 body simulation.
-It also contains some useful stand-alone geometric tools such as convex hull finders and an intersection finder for convex polytopes.
-The development is still in progress (pre-alpha release).  
-The development originally started to experiment an idea to track contacts over multiple simulation steps.
-Conventional physics engines run multiple iteration of geometric configuration update and collision detection
-until there are no new collisions found.
-This is an attempt to track the resting or sliding contacts that have been already discovered
-in the previous steps to avoid such iterations at the next simulation steps onwards.
-The target objects are convex rigid bodies. (Non-convex objects can be handled by gluing convex objects with fixed joints.)
-It supports the joints with both angular and linear limits, frictions/motors, and velocity limits.
-The supported joints are : ball, hinge 1, universal, slider, piston, and fixed joints.
-The contraints are solveed by a projected Gauss-Seidel iterative MLSP solver.
-The contact frictions are not integrated in the complementarity conditions. They are handled at the next step
-by boxed-bilateral constraints based on the pressue along the contact normal direction found at the previous step.
-The new contact detector still has errors that cause excessive repulsive forces & torques.
-The current implementation is written in the standard C++14 with no external dependencies and no optimization has been performed yet.
+It also contains some useful stand-alone geometric tools such as convex hull 
+finders and an intersection finder for convex polytopes.
+The engine development is still in progress (pre-alpha release).  
+The development originally started to experiment an idea to track contacts 
+over multiple simulation steps.
+Conventional physics engines run multiple iteration of geometric configuration
+update and collision detection until there are no new collisions found in a 
+single simulation step.
+This is an attempt to track the resting or sliding contacts that have been 
+already discovered in the previous steps to avoid such iterations at the cost
+of more expensive processing at the discovery that involves finding the 
+intersection of two penetrating polytopes.
+The author hopes this elaborated discovery process and the tracking will 
+contribute to more stabilized and consistent unilateral constraints generation.
+The target objects are convex rigid bodies. Non-convex objects can be realized
+by gluing convex objects with fixed joints.
+It supports the joints with both angular and linear limits, frictions/motors, 
+and velocity limits. The supported joints are : ball, hinge 1, universal, 
+slider, piston, and fixed joints.
+The contraints are solved by a projected Gauss-Seidel iterative MLSP solver.
+The contact frictions are not integrated in the complementarity conditions. 
+They are handled at the next step by boxed-bilateral constraints based on the 
+pressue along the contact normal direction found at the previous step.
+The new contact detector still has errors that cause generation of erraneous 
+contact feature pairs, that manifests as excessive repulsive forces & torques
+in the simulation.
+The current implementation is written in the standard C++14 with no external
+dependencies and no optimization has been performed yet.
 
 # Samples
 
