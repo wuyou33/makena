@@ -23,8 +23,14 @@ The current implementation is written in the standard C++14 with no external dep
 Following are some test visualizations of Makena physics engine that demostrate the ability to handle joints, collisions, and resting/sliding contacts with frictions.
 
 [![alt text](docs/pics/Demo01.png "")](https://youtu.be/X6oTUmtE51Q)
+TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
+TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 [![alt text](docs/pics/ContactDemo01.png "")](https://youtu.be/X6oTUmtE51Q)
+TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
+TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 [![alt text](docs/pics/DemoCollision02.png "")](https://youtu.be/X6oTUmtE51Q)
+TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
+TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 
 And here are some visualizations of some stand-alone components developed for Makena
 
