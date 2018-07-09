@@ -2,6 +2,19 @@
 
 ![alt text](docs/pics/TopPics.png "Top pics to attract attention")
 
+# Highlights
+
+* Velocity-space constraint-based engine with an iterative MLCP
+* Experimental feature-based contact tracking to avoid rediscovering at every simulation step
+* Convex rigid body simulation
+* Joints: Slider, Piston, Hinge, Universal, Ball, and Fixed with limits and frictions/motors.
+* Some useful geometric tools such as GJK collision detector, convex hull finder, and intersection finder.
+* Other components unit tested and pretty stable.
+* The collision detector still in development and buggy.
+* Written in standard C++14.
+
+# Overview
+
 Makena is a velocity-space, constraint-based physics engine for convex rigid body simulation.
 It also contains some useful stand-alone geometric tools such as convex hull finders and an intersection finder for convex polytopes.
 The development is still in progress (pre-alpha release).  
