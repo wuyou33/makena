@@ -4,14 +4,16 @@
 
 # Highlights
 
-* Velocity-space constraint-based engine with an iterative MLCP
-* Experimental feature-based contact tracking to avoid rediscovering at every simulation step
-* Convex rigid body simulation
-* Joints: Slider, Piston, Hinge, Universal, Ball, and Fixed with limits and frictions/motors.
-* Some useful geometric tools such as GJK collision detector, convex hull finder, and intersection finder.
-* Other components unit tested and pretty stable.
-* The collision detector still in development and buggy.
+* Velocity-space constraint-based engine with an iterative MLCP.
+* Experimental feature-based contact tracking to avoid rediscovering at 
+every simulation step.
+* Some useful and stable geometric tools such as GJK collision detector, 
+convex hull finder, and intersection finder.
+* Convex rigid body simulation.
+* Joints: Slider, Piston, Hinge, Universal, Ball, and Fixed with limits and 
+frictions/motors.
 * Written in standard C++14.
+* The collision detector still in development and buggy.
 
 # Overview
 
@@ -33,7 +35,11 @@ The new contact detector still has errors that cause excessive repulsive forces 
 The current implementation is written in the standard C++14 with no external dependencies and no optimization has been performed yet.
 
 # Samples
-Following are some test visualizations of Makena physics engine that demostrate the ability to handle joints, collisions, and resting/sliding contacts with frictions.
+
+## Physics Simulation
+
+Following are some test visualizations of Makena physics engine that demostrate the ability to handle joints, collisions, 
+and resting/sliding contacts with frictions.
 
 [![alt text](docs/pics/Demo01.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
