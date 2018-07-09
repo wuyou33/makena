@@ -17,7 +17,8 @@ frictions/motors.
 
 # Overview
 
-Makena is a velocity-space, constraint-based physics engine for convex rigid body simulation.
+Makena is a velocity-space, constraint-based physics engine for convex rigid 
+body simulation.
 It also contains some useful stand-alone geometric tools such as convex hull finders and an intersection finder for convex polytopes.
 The development is still in progress (pre-alpha release).  
 The development originally started to experiment an idea to track contacts over multiple simulation steps.
@@ -80,12 +81,15 @@ And here are some visualizations of some stand-alone components developed for Ma
 # Install
 
 
-# Samples
+# Contact Tracking
+
+![alt text](docs/pics/contact_process_flow.png "Contact Process")
 
 
 # Unit Tests
 
 # Requirements
+
 
 
 # License
