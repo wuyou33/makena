@@ -22,37 +22,37 @@ The current implementation is written in the standard C++14 with no external dep
 # Samples
 Following are some test visualizations of Makena physics engine that demostrate the ability to handle joints, collisions, and resting/sliding contacts with frictions.
 
-[![alt text](docs/pics/Demo01.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Demo01.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-[![alt text](docs/pics/ContactDemo01.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/ContactDemo01.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-[![alt text](docs/pics/DemoCollision02.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/DemoCollision02.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
 
 And here are some visualizations of some stand-alone components developed for Makena
 
 ## GJK intersection finder (collision detector)
-[![alt text](docs/pics/GJK.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/GJK.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 
 ## Intersection finder for two convex polytopes
-[![alt text](docs/pics/Intersection3D.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Intersection3D.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 
 ## 3D Convex hull finder
 
-[![alt text](docs/pics/ConvexHull3DStepByStep.png "")](https://youtu.be/X6oTUmtE51Q)
-[![alt text](docs/pics/ConvexHull3D1000StepByStep.png "")](https://youtu.be/X6oTUmtE51Q)
-[![alt text](docs/pics/ConvexHull3DPatheticCube.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/ConvexHull3DStepByStep.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/ConvexHull3D1000StepByStep.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/ConvexHull3DPatheticCube.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 
 ## Intersection finder for two convex polygons
-[![alt text](docs/pics/Intersection2D.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Intersection2D.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 
 ## Quaternion Average finder
 
-[![alt text](docs/pics/Quaternions5.png "")](https://youtu.be/X6oTUmtE51Q)
-[![alt text](docs/pics/Quaternions2.png "")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Quaternions5.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Quaternions2.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
 
 
 
