@@ -164,6 +164,8 @@ The solid blue is the boundary of polytope 2 and interior of polytope 1.
 
 ![alt text](docs/pics/contact_types.png "Contact Types")
 
+![alt text](docs/pics/object_diagram.png "Object Diagram")
+
 
 # Unit Tests
 
