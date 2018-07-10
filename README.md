@@ -335,6 +335,18 @@ constraint.
 
 
 ## Key Concept: Active Feature Pair
+As mentioned above, Makena keeps track of a contact between two objects as
+a pair of features. The rationale behind this is two fold:
+
+1. The contact (intersection) between two convex objects are closed, compact,
+and it can be essentially represented by a pair of features.
+
+2. Such a pair of features has temporal cohesion over multiple iterations.
+I.e., the pair of features does not change often if the objects are resting, or
+sliding. 
+
+The pair of features can be one of the following 7 types.
+
 ![alt text](docs/pics/contact_types.png "Contact Types")
 
 
