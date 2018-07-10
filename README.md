@@ -80,8 +80,7 @@ mainly due to CFM manifests itself as the flexing handle on the right hand
 side.
 
 
-[![alt text](docs/pics/ContactDemo01.png "Stacked cubes")]
-(https://youtu.be/Kwkn6ANskhY)
+[![alt text](docs/pics/ContactDemo01.png "Stacked cubes")](https://youtu.be/Kwkn6ANskhY)
 
 The snapshot from the test rig.
 The collision detector has some bugs that manifest as excessively repulsive 
@@ -93,35 +92,63 @@ The white ray from the origin indicates the direction of gravity.
 It involves unilateral constraints for contacts and boxed bilateral constraints
 for frictions.
 
-[![alt text](docs/pics/DemoCollision02.png "Falling convex objects")]
-(https://youtu.be/5dg-LZOpmAw)
+[![alt text](docs/pics/DemoCollision02.png "Falling convex objects")](https://youtu.be/5dg-LZOpmAw)
 
 A snapshot from a test rig for an earlier version of the engine.
 15 random convex objects falling to the ground according to the gravity and 
 friction.
 
 
+
 And here are some visualizations of some stand-alone components developed for 
 Makena. They are pretty stable.
+
 
 ## GJK intersection finder (collision detector)
 [![alt text](docs/pics/GJK.png "TEXT TEXT TEXT")](https://youtu.be/GfJqVzhR0S8)
 
+This is a visualization of GJK collision detection algorithm that utilizes 
+binary dilation (aka Minkowski sum).
+The red and blue polytopes represent the pair of convex objects to be tested.
+They are placed and oriented in GCS as visualized here.
+The grey polytope represents the binary dilation.
+The small solid cubes at the vertices of the grey polytope represent the 
+simplex that encloses or is the closest to the origin.
+The small solid red and blue cubes at the vertices of input polytopes 
+correspond to the simplex in the binary dilation.
+If the two objects intersect, the origin is highlighted in yellow.
+If not, then the yellow ray from the origin indicate the direction from the 
+closest point on the simplex to the orign.
+
+
 ## Intersection finder for two convex polytopes
 [![alt text](docs/pics/Intersection3D.png "TEXT TEXT TEXT")](https://youtu.be/FT_R4QHUpDQ)
 
-## 3D Convex hull finder
+This is a visualization of intersection of 2 convex polytopes.
+The red and blue wireframes represent the input polytope 1 and 2 respectively.
+The solid red represents the boundary of the intersection that coincides with 
+boundary of polytope 1, and that are interior of polytope 2. 
+The solid blue is the boundary of polytope 2 and interior of polytope 1. 
 
+
+## 3D Convex hull finder
 [![alt text](docs/pics/ConvexHull3DStepByStep.png "TEXT TEXT TEXT")](https://youtu.be/7nrXpwJMh0Q)
+
+
+
 [![alt text](docs/pics/ConvexHull3D1000StepByStep.png "TEXT TEXT TEXT")](https://youtu.be/lCTMRB5TIuA)
+
 [![alt text](docs/pics/ConvexHull3DPatheticCube.png "TEXT TEXT TEXT")](https://youtu.be/Jrqs7vpF9Bw)
+
 
 ## Intersection finder for two convex polygons
 [![alt text](docs/pics/Intersection2D.png "TEXT TEXT TEXT")](https://youtu.be/_J9Uosw3RfM)
 
+
 ## Quaternion Average finder
 
 [![alt text](docs/pics/Quaternions5.png "TEXT TEXT TEXT")](https://youtu.be/qxkgNs0ltao)
+
 [![alt text](docs/pics/Quaternions2.png "TEXT TEXT TEXT")](https://youtu.be/6UZVWl_xGCg)
 
 
@@ -134,6 +161,8 @@ Makena. They are pretty stable.
 # Contact Tracking
 
 ![alt text](docs/pics/contact_process_flow.png "Contact Process")
+
+![alt text](docs/pics/contact_types.png "Contact Types")
 
 
 # Unit Tests
@@ -149,40 +178,6 @@ Makena. They are pretty stable.
 
 
 
-
-
-The contact discovery flow
-1. AABB culling
-2. OBB separating axis test
-3. GJK
-4. Finding intersection
-5. Finding feature pair
-6. Contact point pairs generation 
-7. Unilateral constraints generation
-
-Contace update flow
-1. Contact features update
-2. Contact point pairs generation
-3. Unilateral constraints generation
-
-Contact removal
-A tracked contact will be removed under one of the following conditions.
-1. Contact udpater did not find appropriate contact.
-2. All the constraints were inactive in the latest solution by the constraint solver (MLCP).
-
-
-NOTE: Collision Detector yet unstable.
-
-
-Samples
-
-
-
-
-
-
-
-
 Motivation
 
 
@@ -191,20 +186,34 @@ Features
 
 
 Mile Stones and Status
-
-
+XXXX Concept and experiments start
+XXXX Component Development start
+XXXX Design convergeance
+XXXX Unit test complete
 
 July 8, 2018: Pre-alpha release
 
 
 Issues and Future Plan
+M1: Development of Debugging Framework
+    Simulation recorder, player, visualizer.
+     (Estm. 50 Engineer-day)
 
+M2: Integration test complete
 
-XXXX: Alpha release
+A3: Alpha release
 
-- Stability 
-- Optimization for target device
+M4: Bug Convergeance
 
+M5: Load/stability test complete
+
+B6: Beta release
+
+Future plan:
+* Adding Sphere object
+* Adding 2.5 fixed terrain
+* Adding cloth, rope simulation
+* Optimization for mobile devices
 
 
 File Inventory
