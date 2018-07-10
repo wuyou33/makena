@@ -219,15 +219,9 @@ Please note it depends on the following:
 * [GLFW3](http://www.glfw.org)
 * [AntTweakBar](http://anttweakbar.sourceforge.net/doc/)
 
-
-
-# Contact Tracking
-
-![alt text](docs/pics/contact_process_flow.png "Contact Process")
-
-![alt text](docs/pics/contact_types.png "Contact Types")
-
-![alt text](docs/pics/object_diagram.png "Object Diagram")
+Please note that GLFW and AntTweakBar may have to be hacked for Macbook's
+Retina display for which the pixel size and the screen coordinate unit 
+are different. How to do is to be added to Wiki later.
 
 
 
@@ -280,6 +274,17 @@ This involves development of simulation recorder, player, and visualizer.
 * Adding 2.5 fixed terrain
 * Adding cloth, rope simulation
 * Optimization for mobile devices
+
+
+
+# Makena Engine Design
+
+![alt text](docs/pics/object_diagram.png "Object Diagram")
+
+![alt text](docs/pics/contact_process_flow.png "Contact Process")
+
+![alt text](docs/pics/contact_types.png "Contact Types")
+
 
 
 # Annotated File List
