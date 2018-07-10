@@ -45,7 +45,7 @@ by gluing convex objects with fixed joints.
 It supports the joints with both angular and linear limits, frictions/motors, 
 and velocity limits. The supported joints are : ball, hinge 1, universal, 
 slider, piston, and fixed joints.
-The contraints are solved by a projected Gauss-Seidel iterative MLSP solver.
+The contraints are solved by a projected Gauss-Seidel iterative MLCP solver.
 The contact frictions are not integrated in the complementarity conditions. 
 They are handled at the next step by boxed-bilateral constraints based on the 
 pressue along the contact normal direction found at the previous step.
@@ -278,14 +278,66 @@ This involves development of simulation recorder, player, and visualizer.
 
 
 # Makena Engine Design
+This section describes the brief ovewview of Makena engine design and the key 
+concept, the contact tracking.
+
+## Design Overview
+Following is a object diagram of Makena.
 
 ![alt text](docs/pics/object_diagram.png "Object Diagram")
 
-![alt text](docs/pics/contact_process_flow.png "Contact Process")
+There are three main engine comoponents: ContraintManager, JointManager,
+and ContactManager.
+ConstraintManager takes the unilateral and bilateral constraints for the joints
+and contacts, runs the MLCP solver, and then generates solutions as lagrangian
+multipliers (lambdas). JointManager manages all the joints, generates 
+the Jacobian constraints for the current simulation step using the current
+geometry configuration, receives the lamdas, and then generates internal
+forces and torques for the participating convex rigid bodies.
 
+ContactManager is the core of Makena engine. It performs series of collision 
+tests and discover new collison between two convex rigid bodies. The new
+collision is kept as a pair of two features on the convex rigid bodies.
+Here a feature is one of vertex, edge, or face.
+It keeps track of all the collisions over multiple simulation step, and removes
+them if they are safe to be done so.
+
+There are 4 objects that work as container of data.
+
+ConvexRigidBody represents a target object for simulation. It has the shape
+in a convex manifold as a network of vertices, edges, and faces with normals
+in LCS, the geometric configuration (position of CoM, orientation, linear and
+angular velocity) for the current time step, Mass, inertia matrix, friction
+coefficients, and other attributes.
+
+Joint represents one joint type with angular & linear limits, friction and
+velocity limites where applicable. One joint is usually realized by a set of
+bilateral and unilateral constraints A joint refers to a pair of 
+ConvexRigidBodies. It has an anchor point and some referent axes in LCS in each
+ of those bodies.
+
+ContactPairInfo represent the collision between two ConvexRigidBodies
+discovered and updated by ContactManager. Due to the convexity of the bodies,
+the contact is a closed connected region, and it is essentially a pair of
+features.
+It also has the direction of contact, which is used to generate the unilateral
+constraints, and the contact pressure force calculated from the previous step,
+which is used to generate friction bilateral boxed constraints.
+
+JacobianConstraint represents a single constraint for the complementarity
+problem formulation. It is one of unilateral, bilateral-free, and 
+bilateral-boxed types. It consists of 6 elements on the LHS as coffeicients
+to velocity space, and 1 element on RHS which is in the unit of velocity.
+The MLCP solver in ConstraintManager returns a solution that meets the 
+constraint.
+
+
+## Key Concept: Active Feature Pair
 ![alt text](docs/pics/contact_types.png "Contact Types")
 
 
+
+![alt text](docs/pics/contact_process_flow.png "Contact Process")
 
 # Annotated File List
 
