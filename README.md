@@ -420,6 +420,19 @@ we remove the contact. Otherwise, we generate the contact point pairs in the
 same way as the contact discovery, which will be used to generate unilateral
 constraints.
 
+## One Simulation Step
+
+1. Contact Update/Removal & Constraint Generation
+2. Joints Update & Constraint Generation
+3. Solving MLCP #1
+4. Temporary Geometric Configuration Update
+5. New Contact Discovery based on Temporary Geometric Configuration
+6. Solving MLCP #2 (with additional constraints for the new contacts)
+7. Main Geometric Configuration Update
+
+Currently one simulation step involves two runs of the MLCP solver.
+Some further experiments will be conducted to see if one run is enough
+in the future.
 
 
 # Annotated File List
@@ -571,8 +584,6 @@ Finds the intersection of two convex polygons in 2D by 4 iteration of sweeping.
 
 [broad_phase_aabb_collision_detector.hpp](include/broad_phase_aabb_collision_detector.hpp)
 
-[broad_phase_aabb_collision_detector.cpp](src_lib/broad_phase_aabb_collision_detector.cpp)
-
 Provides broad-phase collision culling using AABBs.
 It uses enter-leave sweeping paradigm on X, Y, and Z axes.
 For each axis, the order or the objects is updated using bubble sort.
@@ -609,8 +620,6 @@ with subspace minimization with Cholesky factorization when applicable.
 * __joint_manager__
 
 [joint_manager.hpp](include/joint_manager.hpp)
-
-[joint_manager.cpp](src_lib/joint_manager.cpp)
 
 Manages the joints, and generates a set of Jacobian constraints at each 
 simulation step.                                                       
@@ -743,16 +752,12 @@ binary dilation (Minkowski sum A-B) in the specific direction from the origin
 
 [red_black_tree.hpp](include/red_black_tree.hpp)
 
-[red_black_tree.cpp](src_lib/red_black_tree.cpp)
-
 A red-black tree implementation.
 
 
 * __loggable__
 
 [loggable.hpp](include/loggable.hpp)
-
-[loggable.cpp](src_lib/loggable.cpp)
 
 Virtual base classe that implements basic logging functionality
 
