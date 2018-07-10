@@ -352,6 +352,8 @@ The pair of features can be one of the following 7 types.
 In reality d1, e, and f rarely occur.
 
 
+## Key Concept: Contact Tracking
+
 Makena tries to eliminate the cycle of configuration update and collision
 detection until convergence within a single simulation step by keeping track
 of existing contacts in the pairs of features pairs, and thus eliminate
