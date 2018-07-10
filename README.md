@@ -7,10 +7,10 @@
 # Highlights
 
 * Velocity-space constraint-based engine with an iterative MLCP.
-* Experimental feature-based contact tracking to avoid rediscovering at 
-every simulation step.
-* Some useful and stable geometric tools such as GJK collision detector, 
-convex hull finder, and intersection finder.
+* Experimental feature-based contact tracking to avoid rediscovering at every 
+simulation step.
+* Some useful and stable geometric tools such as GJK collision detector, convex
+ hull finder, and intersection finder.
 * Convex rigid body simulation.
 * Joints: Slider, Piston, Hinge, Universal, Ball, and Fixed with limits and 
 frictions/motors.
@@ -25,10 +25,11 @@ Makena is a velocity-space, constraint-based physics engine for convex rigid
 body simulation.
 It also contains some useful stand-alone geometric tools such as convex hull 
 finders and an intersection finder for convex polytopes.
-The engine development is still in progress (pre-alpha release).  
+The engine development around collision discovery is still in progress
+(pre-alpha release).  
 
-The development originally started to experiment an idea to track contacts 
-over multiple simulation steps.
+The development originally started to experiment an idea to track contacts over
+ multiple simulation steps.
 Conventional physics engines run multiple iterations of geometric configuration
 update and collision detection until there are no new collisions found in a 
 single simulation step.
@@ -52,30 +53,51 @@ pressue along the contact normal direction found at the previous step.
 The new contact detector still has errors that cause generation of erraneous 
 contact feature pairs, that manifests as excessive repulsive forces & torques
 in the simulation. Other than that, it has no other fatal issues found through
- the unit tests and interactive tests.
+the unit tests and interactive tests.
 The current implementation is written in the standard C++14 with no external
 dependencies and no optimization has been performed yet.
-
 
 
 # Samples
 
 ## Physics Simulation
 
-Following are some test visualizations of Makena physics engine that demostrate the ability to handle joints, collisions, 
-and resting/sliding contacts with frictions.
+Following are some test visualizations of Makena physics engine that demostrate
+joints, collisions, and resting/sliding contacts with frictions.
 
-[![alt text](docs/pics/Demo01.png "TEXT TEXT TEXT")](https://youtu.be/X6oTUmtE51Q)
-TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-[![alt text](docs/pics/ContactDemo01.png "TEXT TEXT TEXT")](https://youtu.be/Kwkn6ANskhY)
-TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-[![alt text](docs/pics/DemoCollision02.png "TEXT TEXT TEXT")](https://youtu.be/5dg-LZOpmAw)
-TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
-TEXT TEXT TEXT. TEXT TEXT TEXT.TEXT TEXT TEXT. TEXT TEXT TEXT.
+[![alt text](docs/pics/Demo01.png "crank")](https://youtu.be/X6oTUmtE51Q)
+This demonstrates the following.
+* Ball joints for the hangind board
+* Slider joint for the blue bar poking the board.
+* Hinge joints at the cranks and rods.
+* Fixed joints to form L-shaped cranks.
+* Universal joints to implement the offset in the two horizontal axes.
+The number of constraints for MLCP solver is around 90.
+Some torque is applied to the middle shaft when it is highlighted in red.
+Interesting to see the numerical drift due to accummulated numerical errors
+mainly due to CFM manifests itself as the flexing handle on the right hand 
+side.
 
-And here are some visualizations of some stand-alone components developed for Makena
+[![alt text](docs/pics/ContactDemo01.png "Stacked cubes")](https://youtu.be/Kwkn6ANskhY)
+The snapshot from the test rig.
+The collision detector has some bugs that manifest as excessively repulsive 
+forces in the video.
+The colllision detector is not stable but it shows the validity of contact 
+tracking of Makena engine, especially how it handles stacking of objects with
+frictions.
+The white ray from the origin indicates the direction of gravity.
+It involves unilateral constraints for contacts and boxed bilateral constraints
+for frictions.
+
+[![alt text](docs/pics/DemoCollision02.png "Falling convex objects")](https://youtu.be/5dg-LZOpmAw)
+
+A snapshot from a test rig for an earlier version of the engine.
+15 random convex objects falling to the ground according to the gravity and 
+friction.
+
+
+And here are some visualizations of some stand-alone components developed for 
+Makena. They are pretty stable.
 
 ## GJK intersection finder (collision detector)
 [![alt text](docs/pics/GJK.png "TEXT TEXT TEXT")](https://youtu.be/GfJqVzhR0S8)
