@@ -1,6 +1,6 @@
 # Makena : Physics Engine and Geometric Tools
 
-![alt text](docs/pics/TopPics.png "Top pics to attract attention")
+![alt text](docs/pics/TopPics.png "Banner Pic")
 
 
 
@@ -58,14 +58,16 @@ The current implementation is written in the standard C++14 with no external
 dependencies and no optimization has been performed yet.
 
 
+
 # Samples
 
 ## Physics Simulation
+Click the images below for movies.
 
 Following are some test visualizations of Makena physics engine that demostrate
 joints, collisions, and resting/sliding contacts with frictions.
 
-[![alt text](docs/pics/Demo01.png "crank")](https://youtu.be/X6oTUmtE51Q)
+[![alt text](docs/pics/Demo01.png "Joint Demo")](https://youtu.be/X6oTUmtE51Q)
 
 This demonstrates the following.
 * Ball joints for the hangind board
@@ -79,8 +81,7 @@ Interesting to see the numerical drift due to accummulated numerical errors
 mainly due to CFM manifests itself as the flexing handle on the right hand 
 side.
 
-
-[![alt text](docs/pics/ContactDemo01.png "Stacked cubes")](https://youtu.be/Kwkn6ANskhY)
+[![alt text](docs/pics/ContactDemo01.png "Stacked Cubes")](https://youtu.be/Kwkn6ANskhY)
 
 The snapshot from the test rig.
 The collision detector has some bugs that manifest as excessively repulsive 
@@ -92,17 +93,14 @@ The white ray from the origin indicates the direction of gravity.
 It involves unilateral constraints for contacts and boxed bilateral constraints
 for frictions.
 
-[![alt text](docs/pics/DemoCollision02.png "Falling convex objects")](https://youtu.be/5dg-LZOpmAw)
+[![alt text](docs/pics/DemoCollision02.png "Falling Convex Objects")](https://youtu.be/5dg-LZOpmAw)
 
 A snapshot from a test rig for an earlier version of the engine.
 15 random convex objects falling to the ground according to the gravity and 
 friction.
 
-
-
 And here are some visualizations of some stand-alone components developed for 
 Makena. They are pretty stable.
-
 
 ## GJK intersection finder (collision detector)
 [![alt text](docs/pics/GJK.png "GJK demo")](https://youtu.be/GfJqVzhR0S8)
@@ -119,7 +117,6 @@ correspond to the simplex in the binary dilation.
 If the two objects intersect, the origin is highlighted in yellow.
 If not, then the yellow ray from the origin indicate the direction from the 
 closest point on the simplex to the orign.
-
 
 ## Intersection finder for two convex polytopes
 [![alt text](docs/pics/Intersection3D.png "3D Intersection Demo")](https://youtu.be/FT_R4QHUpDQ)
@@ -168,17 +165,53 @@ It runs in linear time.
 
 ## Quaternion Average finder
 
-[![alt text](docs/pics/Quaternions5.png "TEXT TEXT TEXT")](https://youtu.be/qxkgNs0ltao)
+[![alt text](docs/pics/Quaternions5.png "Average of 5 Quaternions")](https://youtu.be/qxkgNs0ltao)
 
 Visualization of average of 5 quaternions by QUEST algorithm.
 
-[![alt text](docs/pics/Quaternions2.png "TEXT TEXT TEXT")](https://youtu.be/6UZVWl_xGCg)
+[![alt text](docs/pics/Quaternions2.png "Average of 2 Quaternions")](https://youtu.be/6UZVWl_xGCg)
 
 Visualization of weighted average of 2 Quaternions by QUEST algorithm.
 This is essentially equivalent to the interpolation of two Quaternions (SLERP).
 
 
+# Dependencies
+Makena is written in C++14, and should work for any conformant tool chain.
+It is tested on macOS 10.13.5 with Apple LLVM version 9.1.0 (clang-902.0.39.2).
+Makena depends on 
+[Wailea graph library](https://github.com/ShoYamanishi/wailea).
+
 # Install
+
+## Main command-line tools and the library.
+`$ make` or `$ make all`.
+This will get you `libs/libmakena.so`.
+
+
+## Unit Tests
+`$ make unit_tests`.
+This will run the unit tests.
+Please note it depends on [GoogleTest](https://github.com/google/googletest)
+unit test framework.
+Please change the following in Makefile for your environment.
+
+```# Change the following two locations to yours.
+GOOGLE_TEST_INC_DIR   = -I./GoogleTest/include
+GOOGLE_TEST_LIB_DIR   = -L./GoogleTest/lib
+```
+
+## Interactive Tests (Demos)
+`$ make interactive_tests`.
+This will get you some standalone OpenGL programs under 
+`bins_interactive_tests`.
+
+Please note it depends on the following:
+
+* [GLM](https://glm.g-truc.net/0.9.9/index.html)
+* [GLEW](http://glew.sourceforge.net/basic.html)
+* [GLFW3](http://www.glfw.org)
+* [AntTweakBar](http://anttweakbar.sourceforge.net/doc/)
+
 
 
 # Contact Tracking
