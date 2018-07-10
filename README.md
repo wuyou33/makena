@@ -66,6 +66,7 @@ Following are some test visualizations of Makena physics engine that demostrate
 joints, collisions, and resting/sliding contacts with frictions.
 
 [![alt text](docs/pics/Demo01.png "crank")](https://youtu.be/X6oTUmtE51Q)
+
 This demonstrates the following.
 * Ball joints for the hangind board
 * Slider joint for the blue bar poking the board.
@@ -78,7 +79,10 @@ Interesting to see the numerical drift due to accummulated numerical errors
 mainly due to CFM manifests itself as the flexing handle on the right hand 
 side.
 
-[![alt text](docs/pics/ContactDemo01.png "Stacked cubes")](https://youtu.be/Kwkn6ANskhY)
+
+[![alt text](docs/pics/ContactDemo01.png "Stacked cubes")]
+(https://youtu.be/Kwkn6ANskhY)
+
 The snapshot from the test rig.
 The collision detector has some bugs that manifest as excessively repulsive 
 forces in the video.
@@ -89,7 +93,8 @@ The white ray from the origin indicates the direction of gravity.
 It involves unilateral constraints for contacts and boxed bilateral constraints
 for frictions.
 
-[![alt text](docs/pics/DemoCollision02.png "Falling convex objects")](https://youtu.be/5dg-LZOpmAw)
+[![alt text](docs/pics/DemoCollision02.png "Falling convex objects")]
+(https://youtu.be/5dg-LZOpmAw)
 
 A snapshot from a test rig for an earlier version of the engine.
 15 random convex objects falling to the ground according to the gravity and 
