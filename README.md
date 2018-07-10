@@ -288,13 +288,13 @@ This involves development of simulation recorder, player, and visualizer.
 
 * __B6__: Beta release
 
-## Future plan:
+* __F1__: Adding Sphere object
 
-* Adding Sphere object
-* Adding 2.5 fixed terrain
-* Adding cloth, rope simulation
-* Optimization for mobile devices
+* __F2__: Adding 2.5 fixed terrain
 
+* __F3__: Adding cloth, rope simulation
+
+* __F4__: Optimization for mobile devices
 
 
 # Makena Engine Design
