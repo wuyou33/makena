@@ -105,7 +105,7 @@ Makena. They are pretty stable.
 
 
 ## GJK intersection finder (collision detector)
-[![alt text](docs/pics/GJK.png "TEXT TEXT TEXT")](https://youtu.be/GfJqVzhR0S8)
+[![alt text](docs/pics/GJK.png "GJK demo")](https://youtu.be/GfJqVzhR0S8)
 
 This is a visualization of GJK collision detection algorithm that utilizes 
 binary dilation (aka Minkowski sum).
@@ -122,7 +122,7 @@ closest point on the simplex to the orign.
 
 
 ## Intersection finder for two convex polytopes
-[![alt text](docs/pics/Intersection3D.png "TEXT TEXT TEXT")](https://youtu.be/FT_R4QHUpDQ)
+[![alt text](docs/pics/Intersection3D.png "3D Intersection Demo")](https://youtu.be/FT_R4QHUpDQ)
 
 This is a visualization of intersection of 2 convex polytopes.
 The red and blue wireframes represent the input polytope 1 and 2 respectively.
@@ -132,27 +132,50 @@ The solid blue is the boundary of polytope 2 and interior of polytope 1.
 
 
 ## 3D Convex hull finder
-[![alt text](docs/pics/ConvexHull3DStepByStep.png "TEXT TEXT TEXT")](https://youtu.be/7nrXpwJMh0Q)
+[![alt text](docs/pics/ConvexHull3DStepByStep.png "Convex Hull Demo 1")](https://youtu.be/7nrXpwJMh0Q)
 
+This is a visualization of the convex hull algorithm.
+First, a 3-simplex is formed from 4 points that are found by PCA.
+It aims at enclosing as many points as possible in the beginning.
+After each of the remaining points is tested using a data structure called 
+conflict graph.
+A red point indicates the current point, the red edge indicates the frontier 
+for the current point.
+The interior faces of the frontier will be removed, and new triangular fan 
+seals the hollow part inside the frontier with the current point at its center.
+The blue, red, and yellow rays indicate the outward vertex, edge, and face 
+normals respectively.
 
+[![alt text](docs/pics/ConvexHull3D1000StepByStep.png "Convex Hull Demo 2")](https://youtu.be/lCTMRB5TIuA)
 
-[![alt text](docs/pics/ConvexHull3D1000StepByStep.png "TEXT TEXT TEXT")](https://youtu.be/lCTMRB5TIuA)
+This is another point-by-point visualization of finding the convex hull of
+1,000 points. 
 
-[![alt text](docs/pics/ConvexHull3DPatheticCube.png "TEXT TEXT TEXT")](https://youtu.be/Jrqs7vpF9Bw)
+[![alt text](docs/pics/ConvexHull3DPatheticCube.png "Convex Hull Demo 3")](https://youtu.be/Jrqs7vpF9Bw)
 
+Visualization of convex hull algorithm for the points whose convex hull is 
+(almost) a cube but have some almost coincident vertices and almost co-linear
+edges. 
 
 ## Intersection finder for two convex polygons
-[![alt text](docs/pics/Intersection2D.png "TEXT TEXT TEXT")](https://youtu.be/_J9Uosw3RfM)
+[![alt text](docs/pics/Intersection2D.png "2D Intersection Demo")](https://youtu.be/_J9Uosw3RfM)
 
+Visualization of intersection of 2 convex polygons.
+The two white polygons represent the input, and the red one is the boundary of
+the intersection.
+The algorithm is my original that takes up to 4 vertical sweeps.
+It runs in linear time.
 
 ## Quaternion Average finder
 
 [![alt text](docs/pics/Quaternions5.png "TEXT TEXT TEXT")](https://youtu.be/qxkgNs0ltao)
 
+Visualization of average of 5 quaternions by QUEST algorithm.
+
 [![alt text](docs/pics/Quaternions2.png "TEXT TEXT TEXT")](https://youtu.be/6UZVWl_xGCg)
 
-
-
+Visualization of weighted average of 2 Quaternions by QUEST algorithm.
+This is essentially equivalent to the interpolation of two Quaternions (SLERP).
 
 
 # Install
