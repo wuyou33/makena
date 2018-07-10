@@ -69,6 +69,8 @@ joints, collisions, and resting/sliding contacts with frictions.
 
 [![alt text](docs/pics/Demo01.png "Joint Demo")](https://youtu.be/X6oTUmtE51Q)
 
+This is a recording from `bins_interactive_tests/test_visualizer_demo01`.
+
 This demonstrates the following.
 * Ball joints for the hangind board
 * Slider joint for the blue bar poking the board.
@@ -82,6 +84,8 @@ mainly due to CFM manifests itself as the flexing handle on the right hand
 side.
 
 [![alt text](docs/pics/ContactDemo01.png "Stacked Cubes")](https://youtu.be/Kwkn6ANskhY)
+
+This is a recording from `bins_interactive_tests/test_visualizer_contacts`.
 
 The snapshot from the test rig.
 The collision detector has some bugs that manifest as excessively repulsive 
@@ -105,6 +109,8 @@ Makena. They are pretty stable.
 ## GJK intersection finder (collision detector)
 [![alt text](docs/pics/GJK.png "GJK demo")](https://youtu.be/GfJqVzhR0S8)
 
+This is a recording from `bins_interactive_tests/test_visualizer_gjk_origin_finder demo_patterns/pattern_convex_hull_1000.txt demo_patterns/pattern_convex_hull_mid_size.txt`.
+
 This is a visualization of GJK collision detection algorithm that utilizes 
 binary dilation (aka Minkowski sum).
 The red and blue polytopes represent the pair of convex objects to be tested.
@@ -121,6 +127,8 @@ closest point on the simplex to the orign.
 ## Intersection finder for two convex polytopes
 [![alt text](docs/pics/Intersection3D.png "3D Intersection Demo")](https://youtu.be/FT_R4QHUpDQ)
 
+This is a recording from `bins_interactive_tests/test_visualizer_intersection_finder demo_patterns/pattern_convex_hull_1000.txt demo_patterns/pattern_convex_hull_mid_size.txt`.
+
 This is a visualization of intersection of 2 convex polytopes.
 The red and blue wireframes represent the input polytope 1 and 2 respectively.
 The solid red represents the boundary of the intersection that coincides with 
@@ -130,6 +138,8 @@ The solid blue is the boundary of polytope 2 and interior of polytope 1.
 
 ## 3D Convex hull finder
 [![alt text](docs/pics/ConvexHull3DStepByStep.png "Convex Hull Demo 1")](https://youtu.be/7nrXpwJMh0Q)
+
+This is a recording from `bins_interactive_tests/test_visualizer_manifold_convex_hull demo_patterns/pattern_convex_hull_mid_size.txt`.
 
 This is a visualization of the convex hull algorithm.
 First, a 3-simplex is formed from 4 points that are found by PCA.
@@ -145,10 +155,14 @@ normals respectively.
 
 [![alt text](docs/pics/ConvexHull3D1000StepByStep.png "Convex Hull Demo 2")](https://youtu.be/lCTMRB5TIuA)
 
+This is a recording from `bins_interactive_tests/test_visualizer_manifold_convex_hull demo_patterns/pattern_convex_hull_1000.txt`.
+
 This is another point-by-point visualization of finding the convex hull of
 1,000 points. 
 
 [![alt text](docs/pics/ConvexHull3DPatheticCube.png "Convex Hull Demo 3")](https://youtu.be/Jrqs7vpF9Bw)
+
+This is a recording from `bins_interactive_tests/test_visualizer_manifold_convex_hull demo_patterns/pattern_convex_hull_pathetic_cube.txt`.
 
 Visualization of convex hull algorithm for the points whose convex hull is 
 (almost) a cube but have some almost coincident vertices and almost co-linear
@@ -156,6 +170,8 @@ edges.
 
 ## Intersection finder for two convex polygons
 [![alt text](docs/pics/Intersection2D.png "2D Intersection Demo")](https://youtu.be/_J9Uosw3RfM)
+
+This is a recording from `bins_interactive_tests/test_visualizer_intersection_convex_polygon_2d demo_patterns/pattern_convex_hull_mid_size.txt demo_patterns/pattern_convex_hull_1000.txt`.
 
 Visualization of intersection of 2 convex polygons.
 The two white polygons represent the input, and the red one is the boundary of
@@ -167,9 +183,13 @@ It runs in linear time.
 
 [![alt text](docs/pics/Quaternions5.png "Average of 5 Quaternions")](https://youtu.be/qxkgNs0ltao)
 
+This is a recording from `bins_interactive_tests/test_visualizer_quaternion 5`.
+
 Visualization of average of 5 quaternions by QUEST algorithm.
 
 [![alt text](docs/pics/Quaternions2.png "Average of 2 Quaternions")](https://youtu.be/6UZVWl_xGCg)
+
+This is a recording from `bins_interactive_tests/test_visualizer_quaternion 2`.
 
 Visualization of weighted average of 2 Quaternions by QUEST algorithm.
 This is essentially equivalent to the interpolation of two Quaternions (SLERP).
@@ -397,8 +417,6 @@ constraints.
 
 
 
-
-
 # Annotated File List
 
 ## Low level 
@@ -509,7 +527,7 @@ internal forces and torques at each simulation step. Then it updates the
 geometric configuration of each convex rigid body.
 
 
-## Contact Discovery and Tracking (Experimental)
+## Contact Discovery and Tracking
 
 contact_manager.{hpp,cpp}
 It keeps track of the contacts of convex rigid bodies.
@@ -564,3 +582,7 @@ bd_boundary_simplex_finder.hpp
   Virtual base classe that implements basic logging functionality
 
 
+
+# References
+
+To be added.
