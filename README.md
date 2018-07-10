@@ -175,6 +175,7 @@ Visualization of weighted average of 2 Quaternions by QUEST algorithm.
 This is essentially equivalent to the interpolation of two Quaternions (SLERP).
 
 
+
 # Dependencies
 Makena is written in C++14, and should work for any conformant tool chain.
 It is tested on macOS 10.13.5 with Apple LLVM version 9.1.0 (clang-902.0.39.2).
@@ -204,6 +205,7 @@ GOOGLE_TEST_INC_DIR   = -I./GoogleTest/include
 GOOGLE_TEST_LIB_DIR   = -L./GoogleTest/lib
 ```
 
+
 ## Interactive Tests (Demos)
 `$ make interactive_tests`.
 
@@ -228,10 +230,12 @@ Please note it depends on the following:
 ![alt text](docs/pics/object_diagram.png "Object Diagram")
 
 
+
 # License
 Copyright (c) 2018 Shoichiro Yamanishi
 
 Makena is released under MIT license. See `LICENSE` for details.
+
 
 
 # Contact
@@ -240,29 +244,35 @@ Shoichiro Yamanishi
 
 yamanishi72@gmail.com
 
+
+
 # Milestones and Status
 
 * November, 2017: Concept and experiments start
-* January, 2017: Component Development start
+* January, 2017: Component development start
 * March, 2018: Design convergeance
 * June 30,2018: Unit test complete (old version)
 * July 1, 2018: Contact tracker revised (not unit tested)
 * July 8, 2018: Pre-alpha release
 
+
+
 # Issues and Future Plan
-M1: Development of Debugging Framework
-    Simulation recorder, player, visualizer.
-     (Estm. 50 Engineer-day)
 
-M2: Integration test complete
+* __M1__: Development of debugging framework
 
-A3: Alpha release
+This involves development of simulation recorder, player, and visualizer.
+(Estm. 50 Engineer-day.)
 
-M4: Bug Convergeance
+* __M2__: Integration Test Complete
 
-M5: Load/stability test complete
+* __A3__: Alpha release
 
-B6: Beta release
+* __M4__: Bug Convergeance
+
+* __M5__: Load/stability test complete
+
+* __B6__: Beta release
 
 ## Future plan:
 
@@ -272,7 +282,7 @@ B6: Beta release
 * Optimization for mobile devices
 
 
-# File Inventory
+# Annotated File List
 
 ## Low level 
 
