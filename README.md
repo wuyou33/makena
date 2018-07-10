@@ -62,7 +62,7 @@ dependencies and no optimization has been performed yet.
 # Samples
 
 ## Physics Simulation
-Click the images below for movies.
+__Click the images below for movies__.
 
 Following are some test visualizations of Makena physics engine that demostrate
 joints, collisions, and resting/sliding contacts with frictions.
@@ -178,6 +178,7 @@ This is essentially equivalent to the interpolation of two Quaternions (SLERP).
 # Dependencies
 Makena is written in C++14, and should work for any conformant tool chain.
 It is tested on macOS 10.13.5 with Apple LLVM version 9.1.0 (clang-902.0.39.2).
+
 Makena depends on 
 [Wailea graph library](https://github.com/ShoYamanishi/wailea).
 
@@ -185,11 +186,14 @@ Makena depends on
 
 ## Main command-line tools and the library.
 `$ make` or `$ make all`.
-This will get you `libs/libmakena.so`.
 
+This will get you `libs/libmakena.so`.
+Please note that Makena is still in pre-alpha stage, and there is yet a 
+proper installation procedure.
 
 ## Unit Tests
 `$ make unit_tests`.
+
 This will run the unit tests.
 Please note it depends on [GoogleTest](https://github.com/google/googletest)
 unit test framework.
@@ -202,6 +206,7 @@ GOOGLE_TEST_LIB_DIR   = -L./GoogleTest/lib
 
 ## Interactive Tests (Demos)
 `$ make interactive_tests`.
+
 This will get you some standalone OpenGL programs under 
 `bins_interactive_tests`.
 
@@ -223,36 +228,28 @@ Please note it depends on the following:
 ![alt text](docs/pics/object_diagram.png "Object Diagram")
 
 
-# Unit Tests
-
-# Requirements
-
-
-
 # License
+Copyright (c) 2018 Shoichiro Yamanishi
+
+Makena is released under MIT license. See `LICENSE` for details.
 
 
 # Contact
+For any inquiries, please contact:
+Shoichiro Yamanishi
 
+yamanishi72@gmail.com
 
+# Milestones and Status
 
-Motivation
+* November, 2017: Concept and experiments start
+* January, 2017: Component Development start
+* March, 2018: Design convergeance
+* June 30,2018: Unit test complete (old version)
+* July 1, 2018: Contact tracker revised (not unit tested)
+* July 8, 2018: Pre-alpha release
 
-
-Features
-
-
-
-Mile Stones and Status
-XXXX Concept and experiments start
-XXXX Component Development start
-XXXX Design convergeance
-XXXX Unit test complete
-
-July 8, 2018: Pre-alpha release
-
-
-Issues and Future Plan
+# Issues and Future Plan
 M1: Development of Debugging Framework
     Simulation recorder, player, visualizer.
      (Estm. 50 Engineer-day)
@@ -267,35 +264,17 @@ M5: Load/stability test complete
 
 B6: Beta release
 
-Future plan:
+## Future plan:
+
 * Adding Sphere object
 * Adding 2.5 fixed terrain
 * Adding cloth, rope simulation
 * Optimization for mobile devices
 
 
-File Inventory
+# File Inventory
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Low level 
+## Low level 
 
 primitives.{hpp,cpp}
 Implements Vectors of 2D and 3D, and 3x3 matrixand their basic
@@ -403,8 +382,7 @@ internal forces and torques at each simulation step. Then it updates the
 geometric configuration of each convex rigid body.
 
 
-
-- Contact Discovery and Tracking (Experimental)
+## Contact Discovery and Tracking (Experimental)
 
 contact_manager.{hpp,cpp}
 It keeps track of the contacts of convex rigid bodies.
@@ -442,7 +420,7 @@ into three categories: boundary, polytope 1, and polytope 2
 
 
 
-- Others
+## Others
 
 - voronoi_3simplex_graph.hpp
   Data structure and algorithm to perform 
