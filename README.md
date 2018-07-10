@@ -349,9 +349,22 @@ The pair of features can be one of the following 7 types.
 
 ![alt text](docs/pics/contact_types.png "Contact Types")
 
+In reality d1, e, and f rarely occur.
+
+
+Makena tries to eliminate the cycle of configuration update and collision
+detection until convergence within a single simulation step by keeping track
+of existing contacts in the pairs of features pairs, and thus eliminate
+the need for rediscovery at each new simulation step.
+Following describes the flow of the new contact discovery and existing
+contact update/removal.
 
 
 ![alt text](docs/pics/contact_process_flow.png "Contact Process")
+
+
+
+
 
 # Annotated File List
 
