@@ -770,3 +770,13 @@ into three categories: boundary, polytope 1, and polytope 2
 # References
 
 To be added.
+
+* [ESHD05] Physics-Based Animation by Erleben, Sporring, Henriksen, and Dohlmann
+
+* [E04] Real-Time Collision Detection by Ericson
+
+* [BCKO97] Computational Geometry : Algorithms and Applications by de Berg, Cheong, van Kreveld, and Overmars
+
+* [HB86] Computer Graphics with OpenGL by Hearn and Baker
+
+* [XX] MLCP papers
