@@ -37,7 +37,7 @@ Makena is an attempt to track the resting or sliding contacts that have been
 already discovered in the previous steps to avoid such iterations at the cost
 of more expensive processing at the discovery that involves finding the 
 intersection of two penetrating polytopes.
-The author hopes this elaborated discovery process and the tracking will 
+The author hopes this more involved discovery process and the tracking will 
 contribute to more stabilized and consistent unilateral constraints generation.
 
 The target objects are convex rigid bodies. Non-convex objects can be realized
@@ -278,7 +278,7 @@ This involves development of simulation recorder, player, and visualizer.
 
 
 # Makena Engine Design
-This section describes the brief ovewview of Makena engine design and the key 
+This section describes the brief overview of Makena engine design and the key 
 concept, the contact tracking.
 
 ## Design Overview
@@ -361,6 +361,37 @@ contact update/removal.
 
 
 ![alt text](docs/pics/contact_process_flow.png "Contact Process")
+
+At the contact discovery it lets two objects penetrate at the preliminary
+configuration update.
+It goes through the usual collision detection flow until GJK.
+After the GJK, the actual intersection (penetration volume) is found and 
+then the active feature pair is guessed from the following.
+
+* Most likely separation axis (axes).
+This is found by gradually shrinking the OBBs until it finds a separation axis.
+* Shape and the location of the boundaries of the convex rigid bodies on the
+penetration volume. If there is a dominant boundary face of a convex ridig
+body on the penetratino volume, we pick it.
+* Distribution of the relative velocity in the penetration volume. If the
+relative velocity is uniform among the volume, we pick it as the direction of
+collision.
+
+It finds the active feature pair and the direction as above, and then the 
+contact point pairs are found as the 2D intersection of two features projected
+onto the plane perpendicular to the collision direction.
+
+At the contact update, we first try to demote or promote the feature pair.
+For example if the previous pair is face-face, and if we find the two face
+normals are no longer aligned, we demote it to face-edge or face-vertex
+accordingly.
+Then we decompose the direction into two: the contact normal
+direction `Nd` and the plane `Pd` perpendicular to it. Since the two objects
+are resting or sliding, there should be no movement along `Nd`. We project
+the features onto `Pd` and check for intersection. If there is no intersection
+we remove the contact. Otherwise, we generate the contact point pairs in the
+same way as the contact discovery, which will be used to generate unilateral
+constraints.
 
 
 
