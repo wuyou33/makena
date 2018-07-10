@@ -59,7 +59,7 @@ dependencies and no optimization has been performed yet.
 
 
 
-# Samples
+# Sample Videos
 
 ## Physics Simulation
 __Click the images below for movies__.
