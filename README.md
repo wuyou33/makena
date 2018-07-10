@@ -46,7 +46,9 @@ It supports the joints with both angular and linear limits, frictions/motors,
 and velocity limits. The supported joints are : ball, hinge 1, universal, 
 slider, piston, and fixed joints.
 The contraints are solved by a projected Gauss-Seidel iterative MLCP solver.
-The contact frictions are not integrated in the complementarity conditions. 
+The contact frictions are not integrated in the complementarity conditions, as
+the author cannot find a way to realize them without violating the PSD condition
+on the matrix M.
 They are handled at the next step by boxed-bilateral constraints based on the 
 pressue along the contact normal direction found at the previous step.
 
@@ -77,10 +79,11 @@ This demonstrates the following.
 * Hinge joints at the cranks and rods.
 * Fixed joints to form L-shaped cranks.
 * Universal joints to implement the offset in the two horizontal axes.
+
 The number of constraints for MLCP solver is around 90.
 Some torque is applied to the middle shaft when it is highlighted in red.
 Interesting to see the numerical drift due to accummulated numerical errors
-mainly due to CFM manifests itself as the flexing handle on the right hand 
+including the effect of CFM manifests itself as the flexing handle on the right hand 
 side.
 
 [![alt text](docs/pics/ContactDemo01.png "Stacked Cubes")](https://youtu.be/Kwkn6ANskhY)
@@ -144,7 +147,7 @@ This is a recording from `bins_interactive_tests/test_visualizer_manifold_convex
 This is a visualization of the convex hull algorithm.
 First, a 3-simplex is formed from 4 points that are found by PCA.
 It aims at enclosing as many points as possible in the beginning.
-After each of the remaining points is tested using a data structure called 
+After that, each of the remaining points is tested using a data structure called 
 conflict graph.
 A red point indicates the current point, the red edge indicates the frontier 
 for the current point.
@@ -205,7 +208,7 @@ Makena depends on
 
 # Install
 
-## Main command-line tools and the library.
+## Main library.
 `$ make` or `$ make all`.
 
 This will get you `libs/libmakena.so`.
@@ -267,7 +270,9 @@ yamanishi72@gmail.com
 * March, 2018: Design convergeance
 * June 30,2018: Unit test complete (old version)
 * July 1, 2018: Contact tracker revised (not unit tested)
-* July 8, 2018: Pre-alpha release
+* July 8, 2018: Pre-alpha release 
+It is not complete, but the author has to start working on other projects
+as of July 1, 2018.
 
 
 
